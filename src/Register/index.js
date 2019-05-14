@@ -44,8 +44,6 @@ class Register extends Component {
 
 		}
 
-		
-
 	}
 
 	handleChange = (e) => {
