@@ -14,8 +14,12 @@ class Login extends Component {
 		e.preventDefault();
 		console.log('the submit button was pressed in the login form');
 
-		try {
+		console.log(this.state, '<-- this is this.state before the route hits server');
 
+		/// this.state is not being set! 
+
+		try {
+			console.log('trying route');
 			const loginResponse = await fetch('http://localhost:3000/auth/login', {
 				method: 'POST',
 				credentials: 'include',
@@ -27,10 +31,12 @@ class Login extends Component {
 				})
 
 		const parsedLogin = await loginResponse.json();
-
-		if (parsedLogin.data.loginData === true){
+			console.log(parsedLogin, '<-- this is parsedlogin');
+		if (parsedLogin.loginData === true){
 			console.log('user was logged in via React Login form, check the DB for this user');
 
+		} else if (!parsedLogin.loginData) {
+			console.log('login did not work');
 		}
 
 		} catch (err){
@@ -55,6 +61,7 @@ class Login extends Component {
 				This is the Login container
 				<form onSubmit={this.handleSubmit}>
 					<input 
+						name='username'
 						type='text' 
 						placeholder='username'
 						onChange={this.handleChange}
@@ -62,6 +69,7 @@ class Login extends Component {
 					<br/>
 
 					<input 
+						name='password'
 						type='password'
 						placeholder='password'
 						onChange={this.handleChange}
