@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Freelab
+## Guide for Freelance Devs and Designers
 
-## Available Scripts
 
-In the project directory, you can run:
+### User Stories
 
-### `npm start`
+#### MVP
+- User is able to register for a new account with a unique username and password, and an optional email
+- User is able to enter a numerical zipcode when they register
+- User is able to login
+- When the user logs in, they see a list of the 6 steps to become a freelancer
+- When the user logs in, they're able to see the boxes that they previously checked off from checkbox lists
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Step 1
+- When the user clicks Step 1 they see
+-- A list of industries/niches for developers
+-- A list of industries/niches for designers
+-- they are able to 'check off' the industries that they choose to associate themselves with
+-- the page explains that the list is meant to make them think about their niche
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- On any page, the user is able to go back to the previous step or move on to the next one 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Step 2
+- When the user clicks step 2 they see
+-- A guide to decide their business structure
+-- the guide has a list of 4 business structures that are common to freelancers
+-- text explains some pro and con of both
 
-### `npm run build`
+##### Step 3
+- When the user clicks step 3 they see
+-- a guide and checklist to build their resume and portfolio
+-- the guide lists things like linkedin, branding, projects, contact information, and cards, and networking stuff.
+-- these are external links to other websites 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Step 4 - Github Jobs API
+- When the user clicks step 4 they see
+-- a listing of jobs from Github that come from the API search
+-- the listing of jobs has a query for type: freelance/contract
+-- the listing of jpbs has a query for titles containing "freelance/contract"
+-- Links to the How to Apply
+-- location, company, title, and description
+-- a link to the original post
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+##### Step 5 
+- when the user clicks step 5 they see
+-- a checklist for setting up the financial processes to become a freelancer
+-- set up your prices, develop invoices, accounting structure, CMS, and project mgmt
+-- these are links to external websites or product recommendations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Step 6 - Believe in Yourself
+- when the user clicks step 6 they see
+-- a motivational message
+-- a home button
+-- a back button
+-- an option to enter their email and join the mailing list which will send more information every Saturday morning
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
