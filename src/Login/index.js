@@ -10,8 +10,32 @@ class Login extends Component {
 		};
 	}
 
-	handleSubmit = (e) => {
-		console.log(e);
+	handleSubmit = async (e) => {
+		e.preventDefault();
+		console.log('the submit button was pressed in the login form');
+
+		try {
+
+			const loginResponse = await fetch('http://localhost:3000/auth/login', {
+				method: 'POST',
+				credentials: 'include',
+				// send the cookie with EVERY request
+				body: JSON.stringify(this.state),
+				headers: {
+					'Content-Type':'application/json'
+					}
+				})
+
+		const parsedLogin = await loginResponse.json();
+
+		if (parsedLogin.data.loginData === true){
+			console.log('user was logged in via React Login form, check the DB for this user');
+
+		}
+
+		} catch (err){
+			console.log(err);
+		}
 	};
 
 	handleChange = (e) => {
@@ -21,7 +45,6 @@ class Login extends Component {
 			// computed property syntax
 			[e.target.name] : e.target.value
 		})
-
 	}
 
 	render(){
