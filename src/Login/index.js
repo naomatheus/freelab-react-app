@@ -16,7 +16,7 @@ class Login extends Component {
 
 		console.log(this.state, '<-- this is this.state before the route hits server');
 
-		/// this.state is not being set! 
+		/// this.state is now being set!
 
 		try {
 			console.log('trying route');
