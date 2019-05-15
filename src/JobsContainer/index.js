@@ -13,7 +13,7 @@ class JobsContainer extends Component {
 		return (
 
 			<div>
-				This is the JobsContainer
+				<h1>This is the JobsContainer</h1>
 				<JobsList />
 			</div>
 		)

@@ -7,6 +7,8 @@ class Niche extends Component {
 
 		this.state = {
 			// props from App
+			// App will reach down and grab this state,
+			// this component may have methods that get passed down from App
 		}
 	}
 
@@ -14,9 +16,9 @@ class Niche extends Component {
 		return (
 
 			<div>
-			////////////////////
-				This is Niche Component
-				<h1>Define Your Niche</h1>
+			
+				<h1>This is Niche Component</h1>
+				<h2>Define Your Niche</h2>
 				
 				<div className='header-guide'>
 					Best way to find your vision for the company is to ask yourself why you are starting this business in the first place. Who, how, what, and how will you market yourself.
@@ -39,7 +41,7 @@ class Niche extends Component {
 					<li>UI</li>
 					<li>Data</li>
 				</ul>
-				//////////////
+				
 
 			</div>
 		)

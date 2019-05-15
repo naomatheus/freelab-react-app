@@ -13,7 +13,7 @@ class Motivation extends Component {
 		return(
 
 			<div>
-				This is the motivation component
+				<h1>This is the motivation component</h1>
 				<div className='resouce-card-display'>Draft NL Newsletter resource-card-display</div>
 				<div className='resouce-card-display'>Freelance.io resource-card-display</div>
 				<div className='resouce-card-display'>Medium publications  resource-card-display</div>

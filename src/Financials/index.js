@@ -14,7 +14,7 @@ class Financials extends Component {
 		return(
 
 			<div>
-				This is the financials component 
+				<h1>This is the financials component</h1> 
 				<div className='card-display'>Set Your Prices card-display</div>
 				<div className='card-display'>Develop invoicing template card-display</div>
 				<div className='card-display'>Accounting software card-display</div>

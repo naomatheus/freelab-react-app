@@ -14,7 +14,7 @@ class JobsList extends Component {
 
 		return(
 			<div>
-				This will hold the Github Jobs API call return List
+				<h3>This will hold the Github Jobs API call return List</h3>
 			</div>
 		)
 	}

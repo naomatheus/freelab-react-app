@@ -15,8 +15,8 @@ class BizStructure extends Component {
 		return(
 
 			<div>
-			/////////////////////
-				this is the biz structure component
+			
+				<h1>this is the biz structure component</h1>
 				<div className='card-display'>LLC card-display</div>
 				<div className='card-display'>DBA card-display</div>
 				<div className='card-display'>Sole Proprietor card-display</div>
@@ -24,7 +24,7 @@ class BizStructure extends Component {
 
 
 
-			////////////////////
+			
 			</div>
 		)
 	}

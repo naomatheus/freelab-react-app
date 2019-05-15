@@ -14,8 +14,8 @@ class Portfolio extends Component {
 		return(
 
 			<div id='portfolio-main'>
-				this is the portfolio component
-				//////////////
+				<h1>this is the portfolio component</h1>
+				
 				<ul className='guide-list'>
 					<li>LinkedIn</li>
 					<li>Brand & Brand Statements</li>
@@ -23,7 +23,7 @@ class Portfolio extends Component {
 					<li>Cards & Referrals</li>
 					<li>Network</li>
 				</ul>
-				//////////////
+				
 			</div>
 		)
 	}

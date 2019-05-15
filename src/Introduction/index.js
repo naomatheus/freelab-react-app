@@ -13,7 +13,7 @@ class Introduction extends Component {
 	render(){
 		return (
 			<div id='intro-main'>
-			////////////////////////////
+			
 			This is the Intro component
 				<h1>Freelab</h1>
 				<h2>6 Steps to Become a Freelance Web Developer or Designer</h2>
@@ -24,7 +24,7 @@ class Introduction extends Component {
 				<div className='intro-bubble'>Jobs/Get out there</div>
 				<div className='intro-bubble'>Financials</div>
 				<div className='intro-bubble'>Resources & Motivation</div>
-				/////////////////////////
+				
 			</div>
 		)
 	}
