@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
 
 		this.state = {
 			username: '',
-			password: ''
+			password: '',
+			loginSuccess: Boolean
 		};
+	}
+
+	handleLogin = (e) => {
+		console.log(e, '<-- login being pressed in the handleLogin function');
+			this.props.login();
 	}
 
 	handleSubmit = async (e) => {
@@ -34,9 +40,15 @@ class Login extends Component {
 			console.log(parsedLogin, '<-- this is parsedlogin');
 		if (parsedLogin.loginData === true){
 			console.log('user was logged in via React Login form, check the DB for this user');
+			this.setState({
+				loginSuccess: true
+			})
 
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
+			this.setState({
+				loginSuccess: false
+			})
 		}
 
 		} catch (err){
@@ -59,7 +71,8 @@ class Login extends Component {
 
 			<div>
 				This is the Login container
-				<form onSubmit={this.handleSubmit}>
+				<form 
+				onSubmit={this.handleSubmit}>
 					<input 
 						name='username'
 						type='text' 
@@ -76,7 +89,7 @@ class Login extends Component {
 					/> 
 					<br/>
 
-					<button type='submit'>Login</button>
+					<button type='submit' onClick={this.handleLogin}>Login</button>
 				</form>
 			</div>
 		)

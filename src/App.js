@@ -13,14 +13,22 @@ import JobsContainer from './JobsContainer';
 
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-
+      loggedIn: false
     }
   }
 
 /// 
+  login = () => {
+    
+    /*if (the Login components lifted state has loginSuccess:true then set loggedIn), else (set loginSucces to false and do nothing)*/
+    this.setState({
+      loggedIn: true
+    })
+    console.log('login component called login ');
+  }
 
 
   render (){
@@ -31,7 +39,7 @@ class App extends Component {
         <br/>
         <MainContainer />
         <br/>
-        <Login />
+        <Login login={this.login}/>
         <br/>
         <Register />
         <br/>
