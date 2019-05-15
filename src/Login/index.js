@@ -7,7 +7,7 @@ class Login extends Component {
 		this.state = {
 			username: '',
 			password: '',
-			loginSuccess: Boolean
+			loginSuccess: false
 		};
 	}
 
@@ -39,10 +39,11 @@ class Login extends Component {
 		const parsedLogin = await loginResponse.json();
 			console.log(parsedLogin, '<-- this is parsedlogin');
 		if (parsedLogin.loginData === true){
-			console.log('user was logged in via React Login form, check the DB for this user');
+			
 			this.setState({
 				loginSuccess: true
 			})
+			console.log(this.state,'user was logged in via React Login form, check the DB for this user');
 
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
@@ -58,7 +59,7 @@ class Login extends Component {
 
 	handleChange = (e) => {
 		
-		console.log(e.target.value, '<-- this is event');
+		// console.log(e.target.value, '<-- this is event');
 		this.setState({
 			// computed property syntax
 			[e.target.name] : e.target.value

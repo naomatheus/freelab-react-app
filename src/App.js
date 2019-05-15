@@ -24,22 +24,26 @@ class App extends Component {
   login = () => {
     
     /*if (the Login components lifted state has loginSuccess:true then set loggedIn), else (set loginSucces to false and do nothing)*/
+
+    console.log(this.props.loginSuccess, '<-- login success prop from child ');
+
     this.setState({
       loggedIn: true
-    })
-    console.log('login component called login ');
+    });
+
   }
 
 
   render (){
-    console.log(process.env);
+    console.log(this.state);
+    // console.log(process.env);
     return (
       <div className="App">
         App container
         <br/>
         <MainContainer />
         <br/>
-        <Login login={this.login}/>
+        <Login login={this.login} loginSuccess={this.state.loginSuccess}/>
         <br/>
         <Register />
         <br/>
