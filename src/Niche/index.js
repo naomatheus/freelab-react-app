@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 
-class JobsContainer extends Component {
+
+class Niche extends Component {
 	constructor(){
 		super();
 
-		this.state = {};
+		this.state = {
+			// props from App
+		}
 	}
-
 
 	render(){
 		return (
 
 			<div>
-				This is the JobsContainer
+				This is Niche Component
 			</div>
 		)
 	}
 }
 
-export default JobsContainer
+
+
+export default Niche;
