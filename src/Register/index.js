@@ -20,7 +20,7 @@ class Register extends Component {
 		console.log('registration form attempting create user');
 		try {
 
-			const registerResponse = await fetch('http://localhost:3000/auth/register', {
+			const registerResponse = await fetch(`${process.env.REACT_APP_EXPRESS_API_URL}/auth/register`, {
 				method: 'POST',
 				credentials: 'include',
 				// send the cookie with EVERY request

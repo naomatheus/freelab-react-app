@@ -20,13 +20,17 @@ class App extends Component {
     };
   }
 
-  render (){
+/// 
 
+
+  render (){
+    console.log(process.env);
     return (
       <div className="App">
         App container
         <br/>
         <MainContainer />
+        <br/>
         <Login />
         <br/>
         <Register />

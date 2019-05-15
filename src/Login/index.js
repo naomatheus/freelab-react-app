@@ -20,7 +20,7 @@ class Login extends Component {
 
 		try {
 			console.log('trying route');
-			const loginResponse = await fetch('http://localhost:3000/auth/login', {
+			const loginResponse = await fetch(`${process.env.REACT_APP_EXPRESS_API_URL}/auth/login`, {
 				method: 'POST',
 				credentials: 'include',
 				// send the cookie with EVERY request
