@@ -45,29 +45,42 @@ class App extends Component {
   render (){
     console.log(this.state);
     // console.log(process.env);
+    const loggedIn = this.state.loggedIn;
+
     return (
       <div className="App">
         App container
         <br/>
         <MainContainer />
         <br/>
-        <Login login={this.login} loginSuccess={this.props.loginSuccess} handleSubmit={this.handleSubmit}/>
-        <br/>
-        <Register />
-        <br/>
-        <Introduction />
-        <br/>
-        <Niche />
-        <br/>
-        <BizStructure />
-        <br/>
-        <Portfolio />
-        <br/>
-        <JobsContainer />
-        <br/>
-        <Financials />
-        <br/>
-        <Motivation />
+        { loggedIn ? 
+
+          <div className='loggedInElements'>
+            <Introduction />
+            <br/>
+            <Niche />
+            <br/>
+            <BizStructure />
+            <br/>
+            <Portfolio />
+            <br/>
+            <JobsContainer />
+            <br/>
+            <Financials />
+            <br/>
+            <Motivation />
+          </div>
+          :
+          <div className='loggedOutElements'>
+            <Login login={this.login} loginSuccess={this.props.loginSuccess} handleSubmit={this.handleSubmit}/>
+             <br/>
+
+            <Register />
+            <br/>
+          </div>
+        }
+        
+        
 
 
       </div>
