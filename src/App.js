@@ -16,23 +16,31 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      loginSuccess: false,
+      username: "", 
+      userId: ""
     }
   }
 
-/// 
-  login = () => {
-    
-    /*if (the Login components lifted state has loginSuccess:true then set loggedIn), else (set loginSucces to false and do nothing)*/
+///
 
-    console.log(this.props.loginSuccess, '<-- login success prop from child ');
+  login = (username, userId) => {
+    
+    console.log('login at App level hit');
+
+    /*if (the username and userID were received. 
+
+    the Login components lifted state has loginSuccess:true then set loggedIn), else (set loginSucces to false and do nothing)*/
+    
 
     this.setState({
-      loggedIn: true
-    });
+      loggedIn: true,
+      username: username,
+      userId: userId
+    });    
 
   }
-
 
   render (){
     console.log(this.state);
@@ -43,7 +51,7 @@ class App extends Component {
         <br/>
         <MainContainer />
         <br/>
-        <Login login={this.login} loginSuccess={this.state.loginSuccess}/>
+        <Login login={this.login} loginSuccess={this.props.loginSuccess} handleSubmit={this.handleSubmit}/>
         <br/>
         <Register />
         <br/>

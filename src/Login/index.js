@@ -6,21 +6,20 @@ class Login extends Component {
 
 		this.state = {
 			username: '',
-			password: '',
-			loginSuccess: false
+			password: ''
 		};
 	}
 
-	handleLogin = (e) => {
-		console.log(e, '<-- login being pressed in the handleLogin function');
-			this.props.login();
-	}
+	// handleLogin = (e) => {
+	// 	console.log(e, '<-- login being pressed in the handleLogin function');
+	// 		this.props.login();
+	// }
 
 	handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log('the submit button was pressed in the login form');
+		// console.log('the submit button was pressed in the login form');
 
-		console.log(this.state, '<-- this is this.state before the route hits server');
+		// console.log(this.state, '<-- this is this.state before the route hits server');
 
 		/// this.state is now being set!
 
@@ -38,18 +37,25 @@ class Login extends Component {
 
 		const parsedLogin = await loginResponse.json();
 			console.log(parsedLogin, '<-- this is parsedlogin');
+		
 		if (parsedLogin.loginData === true){
 			
-			this.setState({
-				loginSuccess: true
-			})
-			console.log(this.state,'user was logged in via React Login form, check the DB for this user');
+			// get username and userid and any other user info from backend response 
+			const loggedInUser = parsedLogin.data.username;
+			const userId = parsedLogin.data.usersDbId;
+
+
+			// THEN invoke this.props.login() and pass in as arguments whatever user data your front end needs so that it is stored in state at APP level 
+
+			this.props.login( loggedInUser, userId
+				/*get these from the response username,userId*/)
 
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
-			this.setState({
-				loginSuccess: false
-			})
+
+			/// something else that lets the user know they failed ot login correctly 
+			
+
 		}
 
 		} catch (err){
@@ -67,7 +73,7 @@ class Login extends Component {
 	}
 
 	render(){
-
+		// const loginSuccess=this.props.loginSuccess
 		return (
 
 			<div>
@@ -90,7 +96,7 @@ class Login extends Component {
 					/> 
 					<br/>
 
-					<button type='submit' onClick={this.handleLogin}>Login</button>
+					<button type='submit'>Login</button>
 				</form>
 			</div>
 		)
