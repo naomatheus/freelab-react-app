@@ -5,13 +5,16 @@ class JobsList extends Component {
 
 	constructor(){
 		super();
+		this.state = {
+
+		};
 	}
 	
 	render(){
 
 		return(
 			<div>
-				Jobs List
+				This will hold the Github Jobs API call return List
 			</div>
 		)
 	}

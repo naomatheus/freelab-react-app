@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import JobsList from '../JobsList';
 
 class JobsContainer extends Component {
 	constructor(){
@@ -13,6 +14,7 @@ class JobsContainer extends Component {
 
 			<div>
 				This is the JobsContainer
+				<JobsList />
 			</div>
 		)
 	}
