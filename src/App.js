@@ -144,7 +144,7 @@ class App extends Component {
 
             { niche ? 
                
-              <Niche moveToBizStructure={this.moveToBizStructure} moveToIntro={this.moveToIntro}/>
+              <Niche moveToBizStructure={this.moveToBizStructure} moveToIntro={this.moveToIntro} userId={this.state.userId}/>
               : 
               null }
             
