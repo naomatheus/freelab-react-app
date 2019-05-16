@@ -6,8 +6,8 @@ class Portfolio extends Component {
 		super();
 
 		this.state = {
-
-		};
+			isChecked: false
+		}
 	};
 
 	moveToPrev = () => {
@@ -16,22 +16,91 @@ class Portfolio extends Component {
 
 	moveToNext = () => {
 		this.props.moveToJobsContainer();
-	}
+	};
 
+	handleInputChange = (e) => {
+		console.log('clicking checkbox');
+		const target = this.state.isChecked
+		// if target.checked is true, check the box. if it is false, uncheck the box
+		if (target === false) {
+
+			/// make it only change the checked value of the name of the input element
+			this.setState({
+				isChecked : true
+			})	
+		} else if (
+			target === true){
+			 this.setState({
+				isChecked : false
+			})
+		}
+
+		
+		
+	}
 
 	render(){
 		return(
 
 			<div id='portfolio-main'>
 				<h1>this is the portfolio component</h1>
+				<br/>
+				<label>
+				LinkedIn
+				<input 
+					type='checkbox'
+					name='Web'
+					checked={this.state.isChecked}
+					onChange={this.handleInputChange}
+					
+				/>
+				</label>
+				<br/>
+				<label>
+				Brand & Brand Statements
+				<input 
+					type='checkbox'
+					name='Web'
+					checked={this.state.isChecked}
+					onChange={this.handleInputChange}
+					
+				/>
+				</label>
+				<br/>
+				<label>
+				Projects
+				<input 
+					type='checkbox'
+					name='Web'
+					checked={this.state.isChecked}
+					onChange={this.handleInputChange}
+					
+				/>
+				</label>
+				<br/>
+				<label>
+				Card & Referrals
+				<input 
+					type='checkbox'
+					name='Web'
+					checked={this.state.isChecked}
+					onChange={this.handleInputChange}
+					
+				/>
+				</label>
+				<br/>
+				<label>
+				Network
+				<input 
+					type='checkbox'
+					name='Web'
+					checked={this.state.isChecked}
+					onChange={this.handleInputChange}
+					
+				/>
+				</label>
+				<br/>
 				
-				<ul className='guide-list'>
-					<li>LinkedIn</li>
-					<li>Brand & Brand Statements</li>
-					<li>Projects</li>
-					<li>Cards & Referrals</li>
-					<li>Network</li>
-				</ul>
 				
 				<button
 					onClick={this.moveToPrev}
