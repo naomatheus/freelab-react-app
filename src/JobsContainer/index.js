@@ -8,6 +8,14 @@ class JobsContainer extends Component {
 		this.state = {};
 	}
 
+	moveToPrev = () => {
+		this.props.moveToPortfolio();
+	}
+
+	moveToNext = () => {
+		this.props.moveToFinancials();
+	}
+
 
 	render(){
 		return (
@@ -15,15 +23,16 @@ class JobsContainer extends Component {
 			<div>
 				<h1>This is the JobsContainer</h1>
 				<JobsList />
+				
+				<button
+					id='previous'
+					onClick={this.moveToPrev}>
+					Previous
+				</button>
 				<button
 					id='next'
 					onClick={this.moveToNext}>
 					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
 				</button>
 			</div>
 		)

@@ -11,6 +11,14 @@ class BizStructure extends Component {
 		};
 	}
 
+	moveToPrev = () => {
+		this.props.moveToNiche();
+	};
+
+	moveToNext = () => {
+		this.props.moveToPortfolio();
+	};
+
 	render(){
 		return(
 
@@ -22,16 +30,16 @@ class BizStructure extends Component {
 				<div className='card-display'>Sole Proprietor card-display</div>
 				<div className='card-display'>S Corp card-display</div>
 
-
+				<button
+					id='previous'
+					onClick={this.moveToPrev}
+					>
+					Previous
+				</button>
 				<button
 					id='next'
 					onClick={this.moveToNext}>
 					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
 				</button>
 			
 			</div>

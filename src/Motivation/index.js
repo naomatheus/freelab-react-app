@@ -9,6 +9,11 @@ class Motivation extends Component {
 		}
 	}
 
+	moveToPrev = () => {
+		this.props.moveToFinancials();
+	};
+
+
 	render(){
 		return(
 
@@ -19,22 +24,24 @@ class Motivation extends Component {
 				<div className='resouce-card-display'>Medium publications  resource-card-display</div>
 				<div className='resouce-card-display'>Another website external link resource resource-card-display</div>
 				<br/>
+				
+				
+				<button
+					id='previous'
+					onClick={this.moveToPrev}>
+					Previous
+				</button>
+
+				<button id='next'>
+					Next - Does nothing right now
+				</button>
+
 				<form id='freelab-mailing-list'>
 					<input 
 						type='email' 
 						placeholder='Join Our Mailing List'
 					/>
 				</form>
-				<button
-					id='next'
-					onClick={this.moveToNext}>
-					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
-				</button>
 			</div>
 		)
 	}

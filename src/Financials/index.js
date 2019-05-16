@@ -10,6 +10,14 @@ class Financials extends Component {
 		};
 	}
 
+	moveToPrev = () => {
+		this.props.moveToJobsContainer();
+	}
+
+	moveToNext = () => {
+		this.props.moveToMotivation();
+	}
+
 	render(){
 		return(
 
@@ -20,15 +28,16 @@ class Financials extends Component {
 				<div className='card-display'>Accounting software card-display</div>
 				<div className='card-display'>CMS (Streak) card-display</div>
 				<div className='card-display'>Project Mgmt card-display</div>
+				
+				<button
+					id='previous'
+					onClick={this.moveToPrev}>
+					Previous
+				</button>
 				<button
 					id='next'
 					onClick={this.moveToNext}>
 					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
 				</button>
 			</div>
 		)

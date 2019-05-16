@@ -12,6 +12,14 @@ class Niche extends Component {
 		}
 	}
 
+	moveToPrev = () => {
+		this.props.moveToIntro();
+	};
+
+	moveToNext = () => {
+		this.props.moveToBizStructure();
+	};
+
 	render(){
 		return (
 
@@ -42,15 +50,16 @@ class Niche extends Component {
 					<li>Data</li>
 				</ul>
 				
+				
+				<button
+					onClick={this.moveToPrev}
+					id='previous'>
+					Previous
+				</button>
 				<button
 					id='next'
 					onClick={this.moveToNext}>
 					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
 				</button>
 			</div>
 		)

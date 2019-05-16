@@ -36,6 +36,7 @@ class App extends Component {
       loggedIn: true,
       username: username,
       userId: userId,
+      intro: true,
       niche: false,
       bizStructure: false,
       portfolio: false,
@@ -48,25 +49,81 @@ class App extends Component {
 
   moveToNiche = () => {
       this.setState({
-        niche: true
+        niche: true,
+        intro: false,
+        bizStructure: false
       })
+  };
+
+  moveToIntro = () => {
+    this.setState({
+      niche: false,
+      intro: true,
+      bizStructure: false,
+      // portfolio: false,
+      // jobsContainer: false,
+      // financials: false,
+      // motivation: false
+    })
   };
 
   moveToBizStructure = () => {
       this.setState({
-        bizStructure:true
+        bizStructure:true,
+        niche: false,
+        portfolio: false,
+        jobsContainer: false
+        // financials: false,
+        // motivation: false
+
       })
+  };
+
+  moveToPortfolio = () => {
+    this.setState({
+      portfolio: true,
+      bizStructure: false,
+      jobsContainer: false
+    })
+  };
+
+  moveToJobsContainer = () => {
+    this.setState({
+      jobsContainer: true,
+      portfolio: false,
+      financials: false
+    })
+  }
+
+  moveToFinancials = () => {
+    this.setState({
+      jobsContainer: false,
+      financials: true,
+      motivation: false
+    })
+  }
+
+  moveToMotivation = () => {
+    this.setState({
+      financials: false,
+      motivation: true,
+    })
   }
 
   // should be 7 Booleans in state, that switch based on the page that the user wants to see.
   // It will prevent a lot of errors... I think
 
-
   render (){
     console.log(this.state);
     // console.log(process.env);
     const loggedIn = this.state.loggedIn;
+    const intro = this.state.intro;
     const niche = this.state.niche; 
+    const bizStructure = this.state.bizStructure;
+    const portfolio = this.state.portfolio;
+    const jobsContainer = this.state.jobsContainer;
+    const financials = this.state.financials;
+    const motivation = this.state.motivation;
 
     return (
       <div className="App">
@@ -77,24 +134,58 @@ class App extends Component {
         { loggedIn ? 
 
           <div className='loggedInElements'>
-            <Introduction moveToNiche={this.moveToNiche} />
-            <br/>
-            { niche ? 
-               
-              <Niche moveToBizStructure={this.moveToBizStructure}/>
+            
+            {intro ? 
+              <Introduction moveToNiche={this.moveToNiche} /> 
               : 
               null }
             
             <br/>
-            <BizStructure />
+
+            { niche ? 
+               
+              <Niche moveToBizStructure={this.moveToBizStructure} moveToIntro={this.moveToIntro}/>
+              : 
+              null }
+            
             <br/>
-            <Portfolio />
+
+            {bizStructure ? 
+
+              <BizStructure moveToNiche={this.moveToNiche} moveToPortfolio={this.moveToPortfolio} /> 
+              : 
+              null }
+            
             <br/>
-            <JobsContainer />
+
+            {portfolio ? 
+
+              <Portfolio moveToBizStructure={this.moveToBizStructure} moveToJobsContainer={this.moveToJobsContainer}/> 
+              : 
+              null }
+            
             <br/>
-            <Financials />
+
+            {jobsContainer ? 
+
+              <JobsContainer moveToPortfolio={this.moveToPortfolio} moveToFinancials={this.moveToFinancials}/>
+            :
+            null}
+            
             <br/>
-            <Motivation />
+
+            {financials ? 
+
+              <Financials moveToJobsContainer={this.moveToJobsContainer }moveToMotivation={this.moveToMotivation}/> 
+              : 
+              null }
+            
+            <br/>
+            
+            {motivation ? <Motivation moveToFinancials={this.moveToFinancials} /> 
+            : 
+            false }
+            
           </div>
           :
           <div className='loggedOutElements'>

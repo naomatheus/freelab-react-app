@@ -8,7 +8,16 @@ class Portfolio extends Component {
 		this.state = {
 
 		};
+	};
+
+	moveToPrev = () => {
+		this.props.moveToBizStructure();
+	}; 
+
+	moveToNext = () => {
+		this.props.moveToJobsContainer();
 	}
+
 
 	render(){
 		return(
@@ -23,15 +32,16 @@ class Portfolio extends Component {
 					<li>Cards & Referrals</li>
 					<li>Network</li>
 				</ul>
+				
+				<button
+					onClick={this.moveToPrev}
+					id='previous'>
+					Previous
+				</button>
 				<button
 					id='next'
 					onClick={this.moveToNext}>
 					Next
-				</button>
-				<button
-					onClick={this.moveToPrevious}
-					id='previous'>
-					Previous
 				</button>
 				
 			</div>
