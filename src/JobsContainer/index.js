@@ -17,16 +17,16 @@ class JobsContainer extends Component {
 
 	moveToPrev = () => {
 		this.props.moveToPortfolio();
-	}
+	};
 
 	moveToNext = () => {
 		this.props.moveToFinancials();
-	}
+	};
 
 	componentDidMount(){
 		// make the initial fetch of data
 		this.getJobs();
-	}
+	};
 
 	getJobs = async () => {
 		
@@ -34,8 +34,8 @@ class JobsContainer extends Component {
 
 			const response = await fetch(/*'https://tranquil-waters-21260.herokuapp.com/api/v1/githubJobs/'*/
 
-				'http://localhost:3000/api/v1/githubJobs/', {
-				method: 'GET',
+				'http://localhost:9000/api/v1/githubJobs/', {
+				// method: 'GET',
 				credentials: 'include'
 				// body: JSON.stringify(response),
 				// headers: {
@@ -60,11 +60,12 @@ class JobsContainer extends Component {
 
 	render(){
 		console.log(this.state);
+
 		return (
 
 			<div>
 				<h1>This is the JobsContainer</h1>
-				<JobsList />
+				<JobsList allJobs={this.state.jobs}/>
 				
 				<button
 					id='previous'
