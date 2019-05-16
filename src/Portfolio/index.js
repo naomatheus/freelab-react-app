@@ -23,6 +23,16 @@ class Portfolio extends Component {
 					<li>Cards & Referrals</li>
 					<li>Network</li>
 				</ul>
+				<button
+					id='next'
+					onClick={this.moveToNext}>
+					Next
+				</button>
+				<button
+					onClick={this.moveToPrevious}
+					id='previous'>
+					Previous
+				</button>
 				
 			</div>
 		)

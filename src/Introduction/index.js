@@ -10,6 +10,10 @@ class Introduction extends Component {
 		};
 	}
 
+	moveToNext = () => {
+		this.props.moveToNiche();
+	}
+
 	render(){
 		return (
 			<div id='intro-main'>
@@ -24,7 +28,16 @@ class Introduction extends Component {
 				<div className='intro-bubble'>Jobs/Get out there</div>
 				<div className='intro-bubble'>Financials</div>
 				<div className='intro-bubble'>Resources & Motivation</div>
-				
+				<button
+					id='next'
+					onClick={this.moveToNext}>
+					Next
+				</button>
+				<button
+					onClick={this.moveToPrevious}
+					id='previous'>
+					Previous
+				</button>
 			</div>
 		)
 	}

@@ -23,7 +23,16 @@ class BizStructure extends Component {
 				<div className='card-display'>S Corp card-display</div>
 
 
-
+				<button
+					id='next'
+					onClick={this.moveToNext}>
+					Next
+				</button>
+				<button
+					onClick={this.moveToPrevious}
+					id='previous'>
+					Previous
+				</button>
 			
 			</div>
 		)

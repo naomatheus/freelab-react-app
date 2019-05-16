@@ -35,9 +35,27 @@ class App extends Component {
     this.setState({
       loggedIn: true,
       username: username,
-      userId: userId
+      userId: userId,
+      niche: false,
+      bizStructure: false,
+      portfolio: false,
+      jobsContainer: false,
+      financials: false,
+      motivation: false
     });    
 
+  };
+
+  moveToNiche = () => {
+      this.setState({
+        niche: true
+      })
+  };
+
+  moveToBizStructure = () => {
+      this.setState({
+        bizStructure:true
+      })
   }
 
   // should be 7 Booleans in state, that switch based on the page that the user wants to see.
@@ -48,6 +66,7 @@ class App extends Component {
     console.log(this.state);
     // console.log(process.env);
     const loggedIn = this.state.loggedIn;
+    const niche = this.state.niche; 
 
     return (
       <div className="App">
@@ -58,9 +77,14 @@ class App extends Component {
         { loggedIn ? 
 
           <div className='loggedInElements'>
-            <Introduction />
+            <Introduction moveToNiche={this.moveToNiche} />
             <br/>
-            <Niche />
+            { niche ? 
+               
+              <Niche moveToBizStructure={this.moveToBizStructure}/>
+              : 
+              null }
+            
             <br/>
             <BizStructure />
             <br/>

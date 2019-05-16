@@ -15,6 +15,16 @@ class JobsContainer extends Component {
 			<div>
 				<h1>This is the JobsContainer</h1>
 				<JobsList />
+				<button
+					id='next'
+					onClick={this.moveToNext}>
+					Next
+				</button>
+				<button
+					onClick={this.moveToPrevious}
+					id='previous'>
+					Previous
+				</button>
 			</div>
 		)
 	}

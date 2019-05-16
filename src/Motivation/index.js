@@ -25,6 +25,16 @@ class Motivation extends Component {
 						placeholder='Join Our Mailing List'
 					/>
 				</form>
+				<button
+					id='next'
+					onClick={this.moveToNext}>
+					Next
+				</button>
+				<button
+					onClick={this.moveToPrevious}
+					id='previous'>
+					Previous
+				</button>
 			</div>
 		)
 	}
