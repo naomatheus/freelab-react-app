@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import allNicheCheckBoxes from './allNicheCheckBoxes'
+import Checkbox from '../CheckBoxComponent';
 
 class Niche extends Component {
 	constructor(){
@@ -38,7 +39,7 @@ class Niche extends Component {
 			
 				<h1>This is Niche Component</h1>
 				<h2>Define Your Niche</h2>
-				
+				<form>
 				{
 					allNicheCheckBoxes.map(item => (
 							<label key={item.label} >
@@ -52,7 +53,8 @@ class Niche extends Component {
 						
 					)
 				}
-				
+					<button type='submit'>Save Progress</button>
+				</form>
 				
 				<button
 					onClick={this.moveToPrev}

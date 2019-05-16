@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-
+import allPortfolioCheckBoxes from './allPortfolioCheckBoxes'
+import Checkbox from '../CheckBoxComponent'
 
 class Portfolio extends Component {
 	constructor(){
 		super();
 
 		this.state = {
-			isChecked: false
+			checkedItems: new Map()
 		}
 	};
 
@@ -19,87 +20,36 @@ class Portfolio extends Component {
 	};
 
 	handleInputChange = (e) => {
-		console.log('clicking checkbox');
-		const target = this.state.isChecked
-		// if target.checked is true, check the box. if it is false, uncheck the box
-		if (target === false) {
-
-			/// make it only change the checked value of the name of the input element
-			this.setState({
-				isChecked : true
-			})	
-		} else if (
-			target === true){
-			 this.setState({
-				isChecked : false
-			})
-		}
-
 		
+		const item = e.target.name;
+		const isChecked = e.target.checked;
+		// this set state method takes a prevState parameter, and sets the state to create another method called checkedItems.
+		// the checkItems method contains the properties of item and isChecked.
+		this.setState(prevState => ({checkedItems: prevState.checkedItems.set(item,isChecked)}))
 		
 	}
 
 	render(){
 		return(
 
-			<div id='portfolio-main'>
+			<React.Fragment>
 				<h1>this is the portfolio component</h1>
-				<br/>
-				<label>
-				LinkedIn
-				<input 
-					type='checkbox'
-					name='Web'
-					checked={this.state.isChecked}
-					onChange={this.handleInputChange}
-					
-				/>
-				</label>
-				<br/>
-				<label>
-				Brand & Brand Statements
-				<input 
-					type='checkbox'
-					name='Web'
-					checked={this.state.isChecked}
-					onChange={this.handleInputChange}
-					
-				/>
-				</label>
-				<br/>
-				<label>
-				Projects
-				<input 
-					type='checkbox'
-					name='Web'
-					checked={this.state.isChecked}
-					onChange={this.handleInputChange}
-					
-				/>
-				</label>
-				<br/>
-				<label>
-				Card & Referrals
-				<input 
-					type='checkbox'
-					name='Web'
-					checked={this.state.isChecked}
-					onChange={this.handleInputChange}
-					
-				/>
-				</label>
-				<br/>
-				<label>
-				Network
-				<input 
-					type='checkbox'
-					name='Web'
-					checked={this.state.isChecked}
-					onChange={this.handleInputChange}
-					
-				/>
-				</label>
-				<br/>
+				<form>
+				{
+					allPortfolioCheckBoxes.map(item => (
+							<label key={item.label}>
+								{item.name}
+								<Checkbox 
+									name={item.name}
+									checked={this.state.checkedItems.get(item.name)}
+									onChange={this.handleInputChange}
+								/>
+
+							</label>
+						))
+				}
+					<button type='submit'>Save Progress</button>
+				</form>
 				
 				
 				<button
@@ -113,7 +63,7 @@ class Portfolio extends Component {
 					Next
 				</button>
 				
-			</div>
+			</React.Fragment>
 		)
 	}
 }
