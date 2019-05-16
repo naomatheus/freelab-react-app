@@ -23,8 +23,6 @@ class App extends Component {
     }
   }
 
-///
-
   login = (username, userId) => {
     
     console.log('login at App level hit');
@@ -41,6 +39,10 @@ class App extends Component {
     });    
 
   }
+
+  // should be 7 Booleans in state, that switch based on the page that the user wants to see.
+  // It will prevent a lot of errors... I think
+
 
   render (){
     console.log(this.state);
