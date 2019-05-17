@@ -57,7 +57,7 @@ class Portfolio extends Component {
 					checkedItems: checkBoxObj
 				}),
 				headers: {
-					'Content-Type':'application/json',
+					'Content-Type':'application/json'
 				}
 			});
 

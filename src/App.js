@@ -10,6 +10,7 @@ import Motivation from './Motivation';
 import BizStructure from './BizStructure';
 import Financials from './Financials';
 import JobsContainer from './JobsContainer';
+import UserDetail from './UserDetail';
 
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
     // this.state.userId 
     // call this method when they login, and or hit save progress on any other components.
     // after the progress has been saved to the DB
-  }
+  };
 
   login = (username, userId) => {
     
@@ -55,9 +56,33 @@ class App extends Component {
       portfolio: false,
       jobsContainer: false,
       financials: false,
-      motivation: false
+      motivation: false,
+      showDetails: false
     });    
 
+  };
+
+  logout = (userId) => {
+    console.log('logout at App level hit');
+
+    this.setState(prevState => ({
+        loggedIn: false
+    }))
+  };
+
+  showDetails = () => {
+
+    if (!this.state.showDetails){
+      this.setState(prevState => ({
+
+          showDetails:true
+        })
+      )
+    } else {
+        this.setState(prevState => ({
+            showDetails: false
+        }))
+    }
   };
 
   moveToNiche = () => {
@@ -123,8 +148,9 @@ class App extends Component {
     })
   }
 
-  // should be 7 Booleans in state, that switch based on the page that the user wants to see.
-  // It will prevent a lot of errors... I think
+  logOut = () => {
+    
+  }
 
   render (){
     console.log(this.state);
@@ -137,6 +163,7 @@ class App extends Component {
     const jobsContainer = this.state.jobsContainer;
     const financials = this.state.financials;
     const motivation = this.state.motivation;
+    const showDetails = this.state.showDetails;
 
     return (
       <div className="App">
@@ -197,20 +224,41 @@ class App extends Component {
             
             {motivation ? <Motivation moveToFinancials={this.moveToFinancials} /> 
             : 
-            false }
+            null }
+
+            <br/>
+            { (!loggedIn) ? 
+
+              <UserDetail showDetails={this.showDetails} logout={this.logout} userId={this.state.userId}/>
+              : 
+               <button onClick={this.showDetails}>Account Details</button>
+            }
+
+         
             
           </div>
           :
-          <div className='loggedOutElements'>
-            <Login login={this.login} loginSuccess={this.props.loginSuccess} handleSubmit={this.handleSubmit}/>
+          <div>
+            <Login className="login" login={this.login} loginSuccess={this.props.loginSuccess} handleSubmit={this.handleSubmit}/>
              <br/>
 
-            <Register />
+            <Register className='register'/>
+
             <br/>
+
           </div>
         }
         
-        
+        { (showDetails && loggedIn)  ? 
+
+          
+          <UserDetail showDetails={this.showDetails} logout={this.logout} userId={this.state.userId}/>
+
+          : 
+
+          null
+
+        }
 
 
       </div>
