@@ -15,7 +15,7 @@ class UserDetail extends Component {
 	handleLogout = (userId) => {
 		
 		console.log(userId,'user clicked logout');
-		
+
 		/// makes a fetch request to end the user's session, and changes loggedIn to false
 
 		// call logout in the app component
@@ -40,6 +40,8 @@ class UserDetail extends Component {
 
 		const deletedUser = await sentDelete.json();
 		console.log(deletedUser);
+
+		this.handleLogout();
 
 
 		} catch (err){
