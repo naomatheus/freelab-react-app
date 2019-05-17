@@ -107,8 +107,8 @@ class Niche extends Component {
 
 			<React.Fragment>
 			
-				<h1>This is Niche Component</h1>
-				<h2>Define Your Niche</h2>
+				
+				<h1>Define Your Niche</h1>
 				<form onSubmit={this.updateUser}>
 				{
 					allNicheCheckBoxes.map( (item) => {

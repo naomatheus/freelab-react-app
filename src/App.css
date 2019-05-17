@@ -17,3 +17,12 @@
   color: #61dafb;
 }
 
+.App .loggedInElements {
+
+  background-color: rgba(144,140,201, 8);
+}
+
+
+strong {
+  /*these are the links in the components that have cards*/
+}

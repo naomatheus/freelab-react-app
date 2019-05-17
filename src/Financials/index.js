@@ -22,12 +22,16 @@ class Financials extends Component {
 		return(
 
 			<div>
-				<h1>This is the financials component</h1> 
-				<div className='card-display'>Set Your Prices card-display</div>
-				<div className='card-display'>Develop invoicing template card-display</div>
-				<div className='card-display'>Accounting software card-display</div>
-				<div className='card-display'>CMS (Streak) card-display</div>
-				<div className='card-display'>Project Mgmt card-display</div>
+				<h1>The Financials</h1> 
+				<h3>Get Thy House In Order</h3>
+				<p>
+					Now comes to hard part, choosing how to keep track of your expenses, revenue, and tax obligations from your freelance or contract work.
+				</p>
+				<div className='card-display'>Set Your Prices </div>
+				<div className='card-display'>Develop invoicing template </div>
+				<div className='card-display'>Accounting Software </div>
+				<div className='card-display'>CMS <a href='https://www.streak.com/'>(Streak)</a> </div>
+				<div className='card-display'>Project Mgmt </div>
 				
 				<button
 					id='previous'

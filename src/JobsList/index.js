@@ -5,14 +5,21 @@ import JobsContainer from '../JobsContainer'
 const JobsList = (props) => {
 	
 	console.log(props.allJobs);
+	for (let i in props.allJobs){
+		const jobUrl = props.allJobs[i].url
+		console.log(jobUrl);
 
+	}
+	
+	
 	const gitHubJobs = props.allJobs.map((job) => {
 		
 		return(
+
 			<div>
 				<li key={job.id}>
 					<span>
-						Company: {job.company} 
+						Company:<strong> {job.company} </strong>
 					</span>
 						<br/>
 					<span>
@@ -24,7 +31,11 @@ const JobsList = (props) => {
 						<br/>
 					</span>
 					<span>
-						Description: {job.description}
+						<strong>Title: {job.title}</strong>
+						<br/>
+					</span>
+					<span>
+						Details:{job.url}
 						<br/>
 					</span>
 				</li>
@@ -36,7 +47,7 @@ const JobsList = (props) => {
 	return (
 
 		<div>
-			<h3>This will hold the Github Jobs API call return List
+			<h3>Github Jobs! You're ready to start applying!
 				</h3>
 			<ul>
 				{gitHubJobs}

@@ -97,7 +97,15 @@ class Portfolio extends Component {
 		return(
 
 			<React.Fragment>
-				<h1>this is the portfolio component</h1>
+				<h1>Build Your Portfolio</h1>
+				<p>It is best never to launch the freelancing career if you do not have the right experience in creating or providing the services or products you mention. 
+				</p>
+				<p>
+					Since it is the portfolio that would help you in marketing the services and products you offer, so you need to see that they have quality so you can show off.
+				</p>
+				<p>
+					Producing examples for your portfolio is not complicated, though it does take time to create them.
+				</p>
 				<form onSubmit={this.updateUser}>
 				{
 					allPortfolioCheckBoxes.map(item => (

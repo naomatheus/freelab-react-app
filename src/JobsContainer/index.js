@@ -64,7 +64,10 @@ class JobsContainer extends Component {
 		return (
 
 			<div>
-				<h1>This is the JobsContainer</h1>
+				<h1>Remote & Contract Jobs</h1>
+				<p>
+				Who said being a freelancer means you're only ever self employed? One <strong>advantage</strong> of your software or design skills is that you can work from just about anywhere. 
+				</p>
 				<JobsList allJobs={this.state.jobs}/>
 				
 				<button

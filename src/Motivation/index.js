@@ -18,11 +18,11 @@ class Motivation extends Component {
 		return(
 
 			<div>
-				<h1>This is the motivation component</h1>
-				<div className='resouce-card-display'>Draft NL Newsletter resource-card-display</div>
-				<div className='resouce-card-display'>Freelance.io resource-card-display</div>
-				<div className='resouce-card-display'>Medium publications  resource-card-display</div>
-				<div className='resouce-card-display'>Another website external link resource resource-card-display</div>
+				<h1>Motivation</h1>
+
+				<div className='resouce-card-display'>Draft NL Newsletter</div>
+				<div className='resouce-card-display'>Freelance.io </div>
+				<div className='resouce-card-display'>Medium publications  </div>
 				<br/>
 				
 				
