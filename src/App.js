@@ -19,8 +19,21 @@ class App extends Component {
       loggedIn: false,
       loginSuccess: false,
       username: "", 
-      userId: ""
+      userId: "",
+      
+      // form information for this user: 
+      niche: {}
     }
+  }
+
+  getUserInfo = () => {
+    // hit that route that gets only one user's info 
+    // and use it to set their form information in state 
+    // here  
+
+    // this.state.userId 
+    // call this method when they login, and or hit save progress on any other components.
+    // after the progress has been saved to the DB
   }
 
   login = (username, userId) => {
@@ -93,7 +106,7 @@ class App extends Component {
       portfolio: false,
       financials: false
     })
-  }
+  };
 
   moveToFinancials = () => {
     this.setState({
@@ -101,7 +114,7 @@ class App extends Component {
       financials: true,
       motivation: false
     })
-  }
+  };
 
   moveToMotivation = () => {
     this.setState({
@@ -160,7 +173,7 @@ class App extends Component {
 
             {portfolio ? 
 
-              <Portfolio moveToBizStructure={this.moveToBizStructure} moveToJobsContainer={this.moveToJobsContainer}/> 
+              <Portfolio moveToBizStructure={this.moveToBizStructure} moveToJobsContainer={this.moveToJobsContainer} userId={this.state.userId}/> 
               : 
               null }
             

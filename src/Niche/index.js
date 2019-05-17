@@ -12,15 +12,11 @@ class Niche extends Component {
 			// App will reach down and grab this state,
 			// this component may have methods that get passed down from App
 			checkedItems: new Map(),
-			userId: this.props.userId,
+			userId: this.props.userId
 		}
 	}
 
 	/// component did mount every time this loads up to see if there are any boxes that should be checked.
-	// ComponentDidMount() {
-
-	// }; 
-
 	
 	updateUser = async (e) => {
 		console.log('sending checklist info to User model');
@@ -69,9 +65,13 @@ class Niche extends Component {
 			/// hits the put route of the express server to the DB that updates the user model
 			const sentUserResponse = await sentUser.json();
 			console.log(sentUserResponse);
+
+			/// this sentUserResponse contains the correct fetch response, but does not contain the information from the DB
+
+			// does app component need to call the DB to update state? 
 			
 			// this.setState({
-			// 	checekedItems: 
+			// 	checkedItems: 
 			// })
 
 		} catch (err){
@@ -102,6 +102,7 @@ class Niche extends Component {
 
 	render(){
 		console.log(this.state.checkedItems);
+
 		return (
 
 			<React.Fragment>
@@ -110,15 +111,23 @@ class Niche extends Component {
 				<h2>Define Your Niche</h2>
 				<form onSubmit={this.updateUser}>
 				{
-					allNicheCheckBoxes.map(item => (
-							<label key={item.label} >
-								{item.name}
-								<Checkbox 
-									name={item.name}
-									checked={this.state.checkedItems.get(item.name)}
-									onChange={this.handleInputChange}/>
-							</label>
-						) 
+					allNicheCheckBoxes.map( (item) => {
+	
+							let checkStatus = this.state.checkedItems.get(item.name);
+
+							// if according to 
+							// this.props.XXXX (where XXXX is whatever data was passed down) the user has already selected and saved this particular item, you reassign checkStatus to just be true
+
+							return (
+								<label key={item.label} >
+									{item.name}
+									<Checkbox 
+										name={item.name}
+										checked={checkStatus}
+										onChange={this.handleInputChange}/>
+								</label>
+							)
+						}
 						
 					)
 				}
