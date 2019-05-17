@@ -57,7 +57,7 @@ class Register extends Component {
 		return (
 
 			<div>
-				This is the registration container
+				<h3>Register for Freelab</h3>
 
 				<form onSubmit={this.handleSubmit}>
 					<input

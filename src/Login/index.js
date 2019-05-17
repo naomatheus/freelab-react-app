@@ -77,7 +77,8 @@ class Login extends Component {
 		return (
 
 			<div>
-				This is the Login container
+				<small>Already have an account?</small>
+				<h2>Login!</h2>
 				<form 
 				onSubmit={this.handleSubmit}>
 					<input 

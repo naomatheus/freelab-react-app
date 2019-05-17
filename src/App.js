@@ -167,7 +167,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        App container
         <br/>
         <MainContainer />
         <br/>
