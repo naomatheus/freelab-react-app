@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog'
 
 class Register extends Component {
 	constructor(){
@@ -9,7 +10,8 @@ class Register extends Component {
 			username:'',
 			password:'',
 			zipCode:'',
-			email:''
+			email:'',
+			message: ''
 		};
 	}
 
@@ -34,7 +36,10 @@ class Register extends Component {
 			console.log(parsedRegistration, '<--- this is the parsedRegistration');
 
 			if (parsedRegistration.data._id){
-				console.log('login was successful');
+				console.log('registration was successful');
+				this.setState({
+					message: 'Registration successful!'
+				})
 				console.log(parsedRegistration, '<-- this is new user data');
 			} else if (!parsedRegistration.data._id){
 				console.log('there was an issue with registering');
@@ -104,9 +109,18 @@ class Register extends Component {
 					<button type='submit'>Register Account</button>
 
 				</form>
+				{ 
+				this.state.message != '' ? 
+					<div>
+						{this.state.message}
+					</div> 
+				:
+				false 
+				}
 
 			</div>
 		)
+
 	}
 }
 

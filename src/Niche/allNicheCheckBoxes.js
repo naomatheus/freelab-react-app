@@ -3,7 +3,7 @@ const allNicheCheckBoxes = [
 
 	{	
 		type:'checkbox',
-		name:'designer/illustrator',
+		name:'Designer/Illustrator',
 		label:'designer/illustrator'
 		
 	},

@@ -6,7 +6,8 @@ class Login extends Component {
 
 		this.state = {
 			username: '',
-			password: ''
+			password: '',
+			message: ''
 		};
 	}
 
@@ -53,6 +54,9 @@ class Login extends Component {
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
 
+			this.setState({
+				message: 'Login failed due to incorrect username or password. Try again!'
+			})
 			/// something else that lets the user know they failed ot login correctly 
 			
 
@@ -99,6 +103,13 @@ class Login extends Component {
 
 					<button type='submit'>Login</button>
 				</form>
+
+				{this.state.message != '' ? 
+					 <div>{this.state.message}
+					 </div>
+				:
+				false
+				}
 			</div>
 		)
 	}

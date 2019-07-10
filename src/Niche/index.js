@@ -120,6 +120,7 @@ class Niche extends Component {
 
 							return (
 								<label key={item.label} >
+								<br/>
 									{item.name}
 									<Checkbox 
 										name={item.name}

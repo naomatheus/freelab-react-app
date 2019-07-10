@@ -1,5 +1,6 @@
 import React from 'react';
 import JobsContainer from '../JobsContainer'
+import {JobCard,JobListItem} from './JobStyles'
 
 
 const JobsList = (props) => {
@@ -16,7 +17,7 @@ const JobsList = (props) => {
 		
 		return(
 
-			<div>
+			<JobCard>
 				<li key={job.id}>
 					<span>
 						Company:<strong> {job.company} </strong>
@@ -39,7 +40,7 @@ const JobsList = (props) => {
 						<br/>
 					</span>
 				</li>
-			</div>
+			</JobCard>
 		)
 
 	})
@@ -49,9 +50,9 @@ const JobsList = (props) => {
 		<div>
 			<h3>Github Jobs! You're ready to start applying!
 				</h3>
-			<ul>
+			<JobListItem>
 				{gitHubJobs}
-			</ul>
+			</JobListItem>
 		</div>
 		)
 	

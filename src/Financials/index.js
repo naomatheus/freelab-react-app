@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FinCard from './FinStyles'
 
 
 class Financials extends Component {
@@ -27,11 +28,11 @@ class Financials extends Component {
 				<p>
 					Now comes to hard part, choosing how to keep track of your expenses, revenue, and tax obligations from your freelance or contract work.
 				</p>
-				<div className='card-display'>Set Your Prices </div>
-				<div className='card-display'>Develop invoicing template </div>
-				<div className='card-display'>Accounting Software </div>
-				<div className='card-display'>CMS <a href='https://www.streak.com/'>(Streak)</a> </div>
-				<div className='card-display'>Project Mgmt </div>
+				<FinCard>Set Your Prices </FinCard>
+				<FinCard>Develop invoicing template </FinCard>
+				<FinCard>Accounting Software </FinCard>
+				<FinCard>CMS <a href='https://www.streak.com/'>(Streak)</a> </FinCard>
+				<FinCard>Project Mgmt </FinCard>
 				
 				<button
 					id='previous'
