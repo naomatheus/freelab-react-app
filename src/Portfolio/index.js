@@ -12,10 +12,6 @@ class Portfolio extends Component {
 		}
 	};
 
-	// ComponentDidMount () {
-		// each time this is rendered, check to see if there are any checkboxes that need to be updated
-	// };
-
 	updateUser = async (e) => {
 			console.log('sending checklist from the portfolio component');
 			console.log(this.props.userId);

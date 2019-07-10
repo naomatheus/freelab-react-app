@@ -6,7 +6,7 @@ class Introduction extends Component {
 		super();
 
 		this.state = {
-/// not sure if this componenet needs state. It will mainly be a display component meant to move folks through each step
+
 		};
 	}
 

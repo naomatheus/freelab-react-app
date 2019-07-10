@@ -7,11 +7,6 @@ class JobsContainer extends Component {
 
 		this.state = {
 			jobs: []
-			// , 
-			// jobToShow: {
-			// 	title:
-			// 	type:
-			// may not need}
 		};
 	}
 
@@ -24,7 +19,7 @@ class JobsContainer extends Component {
 	};
 
 	componentDidMount(){
-		// make the initial fetch of data
+		// makes the initial fetch of data
 		this.getJobs();
 	};
 
@@ -32,14 +27,12 @@ class JobsContainer extends Component {
 		
 		try {
 
-			const response = await fetch(/*'https://tranquil-waters-21260.herokuapp.com/api/v1/githubJobs/'*/
+			const response = await fetch(
 
 				'http://localhost:9000/api/v1/githubJobs/', {
-				// method: 'GET',
+				
 				credentials: 'include'
-				// body: JSON.stringify(response),
-				// headers: {
-				// 	'Content-Type':'application/json'
+				
 				}
 		)
 			// stop if there are issues with the response

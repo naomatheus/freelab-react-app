@@ -6,25 +6,19 @@ class UserDetail extends Component {
 
 
 		this.state = {
-		/// something maybe 
-		// knows who the user is, maybe gets it from App component 
+		
 			userId: this.props.userId
 		}
 	}
 
 	handleLogout = (userId) => {
-		
-		console.log(userId,'user clicked logout');
-
-		/// makes a fetch request to end the user's session, and changes loggedIn to false
-
-		// call logout in the app component
+				
 		this.props.logout(this.state.userId);
 
 	};
 
 	deleteAccount = async (e) => {
-		// e.preventDefault();
+		
 		try {
 
 			const sentDelete = await fetch('http://localhost:9000/user/' + this.state.userId, {
@@ -36,12 +30,11 @@ class UserDetail extends Component {
 				headers: {
 					'Content-Type' : 'application/json'
 				}
-		})
+			})
 
-		const deletedUser = await sentDelete.json();
-		console.log(deletedUser);
-
-		this.handleLogout();
+			const deletedUser = await sentDelete.json();
+			
+			this.handleLogout();
 
 
 		} catch (err){
@@ -61,9 +54,6 @@ class UserDetail extends Component {
 
 		)
 	}
-
-
-
 }
 
 

@@ -6,7 +6,7 @@ class Motivation extends Component {
 	constructor(){
 		super();
 		this.state = {
-			// not sure that this component needs state except to return to one of the previous steps
+			
 		}
 	}
 
@@ -39,7 +39,6 @@ class Motivation extends Component {
 				</ResourceCard>
 				
 				<br/>
-				
 				
 				<button
 					id='previous'

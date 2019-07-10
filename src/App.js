@@ -28,24 +28,11 @@ class App extends Component {
   }
 
   getUserInfo = () => {
-    // hit that route that gets only one user's info 
-    // and use it to set their form information in state 
-    // here  
-
-    // this.state.userId 
-    // call this method when they login, and or hit save progress on any other components.
-    // after the progress has been saved to the DB
+    
   };
 
   login = (username, userId) => {
-    
-    console.log('login at App level hit');
-
-    /*if (the username and userID were received. 
-
-    the Login components lifted state has loginSuccess:true then set loggedIn), else (set loginSucces to false and do nothing)*/
-    
-
+        
     this.setState({
       loggedIn: true,
       username: username,
@@ -98,10 +85,6 @@ class App extends Component {
       niche: false,
       intro: true,
       bizStructure: false,
-      // portfolio: false,
-      // jobsContainer: false,
-      // financials: false,
-      // motivation: false
     })
   };
 
@@ -111,9 +94,6 @@ class App extends Component {
         niche: false,
         portfolio: false,
         jobsContainer: false
-        // financials: false,
-        // motivation: false
-
       })
   };
 
@@ -154,7 +134,7 @@ class App extends Component {
 
   render (){
     console.log(this.state);
-    // console.log(process.env);
+    
     const loggedIn = this.state.loggedIn;
     const intro = this.state.intro;
     const niche = this.state.niche; 
@@ -232,8 +212,6 @@ class App extends Component {
               : 
                <button onClick={this.showDetails}>Account Details</button>
             }
-
-         
             
           </div>
           :
@@ -258,7 +236,6 @@ class App extends Component {
           null
 
         }
-
 
       </div>
     )

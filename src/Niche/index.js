@@ -8,15 +8,12 @@ class Niche extends Component {
 		super(props);
 
 		this.state = {
-			// props from App
-			// App will reach down and grab this state,
-			// this component may have methods that get passed down from App
+			
 			checkedItems: new Map(),
 			userId: this.props.userId
 		}
 	}
 
-	/// component did mount every time this loads up to see if there are any boxes that should be checked.
 	
 	updateUser = async (e) => {
 		console.log('sending checklist info to User model');

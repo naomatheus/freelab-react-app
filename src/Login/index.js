@@ -11,18 +11,8 @@ class Login extends Component {
 		};
 	}
 
-	// handleLogin = (e) => {
-	// 	console.log(e, '<-- login being pressed in the handleLogin function');
-	// 		this.props.login();
-	// }
-
 	handleSubmit = async (e) => {
 		e.preventDefault();
-		// console.log('the submit button was pressed in the login form');
-
-		// console.log(this.state, '<-- this is this.state before the route hits server');
-
-		/// this.state is now being set!
 
 		try {
 			console.log('trying route');
@@ -41,15 +31,14 @@ class Login extends Component {
 		
 		if (parsedLogin.loginData === true){
 			
-			// get username and userid and any other user info from backend response 
+			// gets username and userid from backend response 
 			const loggedInUser = parsedLogin.data.username;
 			const userId = parsedLogin.data.usersDbId;
 
 
-			// THEN invoke this.props.login() and pass in as arguments whatever user data your front end needs so that it is stored in state at APP level 
+			//invokes this.props.login()
 
 			this.props.login( loggedInUser, userId
-				/*get these from the response username,userId*/)
 
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
@@ -57,9 +46,7 @@ class Login extends Component {
 			this.setState({
 				message: 'Login failed due to incorrect username or password. Try again!'
 			})
-			/// something else that lets the user know they failed ot login correctly 
-			
-
+		
 		}
 
 		} catch (err){
@@ -69,7 +56,7 @@ class Login extends Component {
 
 	handleChange = (e) => {
 		
-		// console.log(e.target.value, '<-- this is event');
+		
 		this.setState({
 			// computed property syntax
 			[e.target.name] : e.target.value
@@ -77,7 +64,7 @@ class Login extends Component {
 	}
 
 	render(){
-		// const loginSuccess=this.props.loginSuccess
+		
 		return (
 
 			<div>
@@ -108,13 +95,11 @@ class Login extends Component {
 					 <div>{this.state.message}
 					 </div>
 				:
-				false
+					null
 				}
 			</div>
 		)
 	}
-
-
 }
 
 
