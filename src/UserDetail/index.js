@@ -47,7 +47,7 @@ class UserDetail extends Component {
 		return(
 
 			<div>
-				This is the user details component 
+				
 				<button onClick={this.handleLogout}>Logout</button>
 				<button onClick={this.deleteAccount}>Delete Account</button>
 			</div>
