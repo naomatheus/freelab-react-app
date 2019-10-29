@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import styled from 'styled-components'
+// import { IntroBubble, FormStyle } from '../Introduction/IntroStyles.js'
+import IntroBubble from '../Introduction/IntroStyles'
+import FormStyle from '../Introduction/IntroStyles'
+
 
 class Login extends Component {
 	constructor(props){
@@ -38,7 +43,7 @@ class Login extends Component {
 
 			//invokes this.props.login()
 
-			this.props.login( loggedInUser, userId
+			this.props.login( loggedInUser, userId)
 
 		} else if (!parsedLogin.loginData) {
 			console.log('login did not work');
@@ -66,38 +71,45 @@ class Login extends Component {
 	render(){
 		
 		return (
+			<Fragment>
+				<IntroBubble>
+					<small>Already have an account?</small>
+					<h2>Login!</h2>
+					<form 
+					onSubmit={this.handleSubmit}>
+						<input 
+							name='username'
+							type='text' 
+							placeholder='username'
+							onChange={this.handleChange}
+						/>
+						<br/>
 
-			<div>
-				<small>Already have an account?</small>
-				<h2>Login!</h2>
-				<form 
-				onSubmit={this.handleSubmit}>
-					<input 
-						name='username'
-						type='text' 
-						placeholder='username'
-						onChange={this.handleChange}
+						<input 
+							name='password'
+							type='password'
+							placeholder='password'
+							onChange={this.handleChange}
+						/> 
+						<br/>
+
+						<button type='submit'>Login</button>
+					</form>
+
+					{this.state.message != '' ? 
+						 <div>{this.state.message}
+						 </div>
+					:
+						null
+					}
+				</IntroBubble>
+				<FormStyle>
+					<p> working? </p>
+					<input
+						name='hey'
 					/>
-					<br/>
-
-					<input 
-						name='password'
-						type='password'
-						placeholder='password'
-						onChange={this.handleChange}
-					/> 
-					<br/>
-
-					<button type='submit'>Login</button>
-				</form>
-
-				{this.state.message != '' ? 
-					 <div>{this.state.message}
-					 </div>
-				:
-					null
-				}
-			</div>
+				</FormStyle>
+			</Fragment>
 		)
 	}
 }

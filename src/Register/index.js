@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog'
+import IntroBubble from '../Introduction/IntroStyles'
 
 class Register extends Component {
 	constructor(){
@@ -61,7 +62,7 @@ class Register extends Component {
 	render() {
 		return (
 
-			<div>
+			<IntroBubble>
 				<h3>Register for Freelab</h3>
 
 				<form onSubmit={this.handleSubmit}>
@@ -118,7 +119,7 @@ class Register extends Component {
 				false 
 				}
 
-			</div>
+			</IntroBubble>
 		)
 
 	}
